@@ -118,16 +118,6 @@
                   <span>arXiv</span>
                 </a>
               </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
               <!-- Code Link. -->
               <span class="link-block">
                 <a href="https://github.com/Ruiyang-061X/VL-Uncertainty"
@@ -155,40 +145,40 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Given the higher information load processed by large vision-language models (LVLMs) compared to single-modal LLMs, detecting LVLM hallucinations requires more human and time expense, and thus rise a wider safety concerns. In this paper, we introduce <span class="dnerf">VL-Uncertainty</span>, the first uncertainty-based framework for detecting hallucinations in LVLMs. Different from most existing methods that require ground-truth or pseudo annotations, VL-Uncertainty utilizes uncertainty as an intrinsic metric. We measure uncertainty by analyzing the prediction variance across semantically equivalent but perturbed prompts, including visual and textual data. When LVLMs are highly confident, they provide consistent responses to semantically equivalent queries. However, when uncertain, the responses of the target LVLM become more random. Considering semantically similar answers with different wordings, we cluster LVLM responses based on their semantic content and then calculate the cluster distribution entropy as the uncertainty measure to detect hallucination. Our extensive experiments on 10 LVLMs across four benchmarks, covering both free-form and multi-choice tasks, show that VL-Uncertainty significantly outperforms strong baseline methods in hallucination detection.
+            Given the higher information load processed by large vision-language models (LVLMs) compared to single-modal LLMs, detecting LVLM hallucinations requires more human and time expense, and thus rise a wider safety concerns. In this paper, we introduce <span class="dnerf">VL-Uncertainty</span>, the first uncertainty-based framework for detecting hallucinations in LVLMs. Different from most existing methods that require ground-truth or pseudo annotations, <span class="dnerf">VL-Uncertainty</span> utilizes uncertainty as an intrinsic metric. We measure uncertainty by analyzing the prediction variance across semantically equivalent but perturbed prompts, including visual and textual data. When LVLMs are highly confident, they provide consistent responses to semantically equivalent queries. However, when uncertain, the responses of the target LVLM become more random. Considering semantically similar answers with different wordings, we cluster LVLM responses based on their semantic content and then calculate the cluster distribution entropy as the uncertainty measure to detect hallucination. Our extensive experiments on 10 LVLMs across four benchmarks, covering both free-form and multi-choice tasks, show that <span class="dnerf">VL-Uncertainty</span> significantly outperforms strong baseline methods in hallucination detection.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
-    <!-- Our Motivation. -->
+    <!-- Motivation. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Our Motivation</h2>
+        <h2 class="title is-3">Motivation</h2>
         <div class="content has-text-justified">
           <img src="static/images/motivation.png" width=100%>
           <p>
-            <b>Our motivation.</b> External evaluator-based methods usually suffer from knowledge missing when it comes to new domains (see (a)). In contrast, our VL-Uncertainty elicits intrinsic uncertainty of LVLM through proposed semantic-equivalent perturbation. Finally, refined uncertainty estimation facilitates reliable LVLM hallucination detection (see (b)).
+            <b>Motivation.</b> External evaluator-based methods usually suffer from knowledge missing when it comes to new domains (see (a)). In contrast, our <span class="dnerf">VL-Uncertainty</span> elicits intrinsic uncertainty of LVLM through proposed semantic-equivalent perturbation. Finally, refined uncertainty estimation facilitates reliable LVLM hallucination detection (see (b)).
           </p>
         </div>
       </div>
     </div>
-    <!--/ Our Motivation. -->
+    <!--/ Motivation. -->
 
-    <!-- VL-Uncertainty. -->
+    <!-- Method. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">VL-Uncertainty</h2>
+        <h2 class="title is-3">Method</h2>
         <div class="content has-text-justified">
           <img src="static/images/method.png" width=100%>
           <p>
-            <b>Overall illustration of our proposed VL-Uncertainty.</b> To facilitate mining of uncertainty arising from various modalities, we apply semantic-equivalent perturbations <b><i>(left)</i></b> to both visual and textual prompts. For visual prompt, the original image is blurred to varying degrees, mimicking human visual perception. For textual prompt, pre-trained LLM is prompted to rephrase the original question in semantic-equivalent manner with different temperatures. Detailed instruction is designed to achieve question rephrasing with the original semantic preserved. Prompt pairs with varying degrees of perturbation are harnessed to effectively elicit LVLM uncertainty. We cluster LVLM answer set by semantic meaning and utilize entropy of answer cluster distribution as LVLM uncertainty <b><i>(right)</i></b>. The estimated uncertainty serves as a continuous indicator of different levels of LVLM hallucination.
+            <b>Overall illustration of our proposed <span class="dnerf">VL-Uncertainty</span>.</b> To facilitate mining of uncertainty arising from various modalities, we apply semantic-equivalent perturbations <b><i>(left)</i></b> to both visual and textual prompts. For visual prompt, the original image is blurred to varying degrees, mimicking human visual perception. For textual prompt, pre-trained LLM is prompted to rephrase the original question in semantic-equivalent manner with different temperatures. Detailed instruction is designed to achieve question rephrasing with the original semantic preserved. Prompt pairs with varying degrees of perturbation are harnessed to effectively elicit LVLM uncertainty. We cluster LVLM answer set by semantic meaning and utilize entropy of answer cluster distribution as LVLM uncertainty <b><i>(right)</i></b>. The estimated uncertainty serves as a continuous indicator of different levels of LVLM hallucination.
           </p>
         </div>
       </div>
     </div>
-    <!--/ VL-Uncertainty. -->
+    <!--/ Method. -->
 
     <!-- Comparison with State-of-the-arts. -->
     <div class="columns is-centered has-text-centered">
@@ -197,7 +187,7 @@
         <div class="content has-text-justified">
           <img src="static/images/results.png" width=100%>
           <p>
-            <b>Comparison with state-of-the-arts on both free-form benchmark (MM-Vet and LLaVABench) and multi-choice benchmark (MMMU and ScienceQA) for LVLM hallucination detection.</b> Our VL-Uncertainty yields significant improvements over strong baselines. This validates the efficacy of our proposed semantic-equivalent perturbation in eliciting and estimating LVLM uncertainty more accurately, which further facilitates LVLM hallucination detection. The reported results are hallucination detection accuracy. We re-implement semantic entropy within vision-language context.
+            <b>Comparison with state-of-the-arts on both free-form benchmark (MM-Vet and LLaVABench) and multi-choice benchmark (MMMU and ScienceQA) for LVLM hallucination detection.</b> Our <span class="dnerf">VL-Uncertainty</span> yields significant improvements over strong baselines. This validates the efficacy of our proposed semantic-equivalent perturbation in eliciting and estimating LVLM uncertainty more accurately, which further facilitates LVLM hallucination detection. The reported results are hallucination detection accuracy. We re-implement semantic entropy within vision-language context.
           </p>
         </div>
       </div>
@@ -211,7 +201,7 @@
         <div class="content has-text-justified">
           <img src="static/images/qualitative.png" width=100%>
           <p>
-            <b>Qualitative comparison between VL-Uncertainty and baselines.</b> We present a sample from free-form benchmark. For this hallucinatory sample, pseudo-annotation-based method fails to interpret the hidden-behind logic and thus misses detecting hallucination (see (a)). On the other hand, for semantic-entropy, vanilla multi-sampling proves ineffective for mining LVLM uncertainty (see (b)). In contrast, our proposed semantic-equivalent perturbation on both visual and textual prompts successfully elicits LVLM uncertainty. This refined uncertainty estimation enhances the successful detection of LVLM hallucination (see (c)).
+            <b>Qualitative comparison between <span class="dnerf">VL-Uncertainty</span> and baselines.</b> We present a sample from free-form benchmark. For this hallucinatory sample, pseudo-annotation-based method fails to interpret the hidden-behind logic and thus misses detecting hallucination (see (a)). On the other hand, for semantic-entropy, vanilla multi-sampling proves ineffective for mining LVLM uncertainty (see (b)). In contrast, our proposed semantic-equivalent perturbation on both visual and textual prompts successfully elicits LVLM uncertainty. This refined uncertainty estimation enhances the successful detection of LVLM hallucination (see (c)).
           </p>
         </div>
       </div>
