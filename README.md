@@ -1,14 +1,14 @@
-# Nerfies
+# VL-Uncertainty
 
-This is the repository that contains source code for the [Nerfies website](https://nerfies.github.io).
+This is the repository that contains source code for the [VL-Uncertainty website](https://ruiyang-061x.github.io/vl-uncertainty-website/).
 
-If you find Nerfies useful for your work please cite:
+If you find VL-Uncertainty useful for your work please cite:
 ```
-@article{park2021nerfies
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+@article{zhang2024vl,
+  title={VL-Uncertainty: Detecting Hallucination in Large Vision-Language Model via Uncertainty Estimation},
+  author={Zhang, Ruiyang and Zhang, Hu and Zheng, Zhedong},
+  journal={arXiv preprint arXiv:2411.11919},
+  year={2024}
 }
 ```
 
